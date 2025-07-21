@@ -1,0 +1,225 @@
+/* src/pages/Service/SendPrescription.css */
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  position: relative;
+  z-index: 1000;
+  background: white;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+.breadcrumb-link {
+  color: #4a5568;
+  text-decoration: none;
+  transition: color .2s;
+}
+.breadcrumb-link:hover {
+  color: #2d3748;
+  text-decoration: underline;
+}
+.breadcrumb-sep {
+  margin: 0 0.5rem;
+  color: #a0aec0;
+}
+.breadcrumb-current {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+/* Tạo khoảng cách nội dung chính khỏi breadcrumb */
+.send-prescription-page {
+  margin-top: 1rem;
+}
+
+/* Page wrapper */
+.send-prescription-page {
+  background: #f5f7fa;
+  padding: 1rem;
+  min-height: calc(100vh - 200px);
+}
+
+/* Content layout */
+.send-prescription-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .send-prescription-content {
+    flex-direction: row;
+  }
+}
+
+/* Form column */
+.form-column {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: .75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex: 1;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.field label {
+  font-size: .875rem;
+  font-weight: 500;
+  margin-bottom: .25rem;
+}
+.field input {
+  padding: .5rem .75rem;
+  border: 1px solid #d1d5db;
+  border-radius: .5rem;
+  font-size: 1rem;
+}
+.two-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 767px) {
+  .two-fields {
+    grid-template-columns: 1fr;
+  }
+}
+.btn-add {
+  width: 100%;
+  padding: .75rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: .5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-add:hover {
+  background: #1e40af;
+}
+
+/* Items column */
+.items-column {
+  background: #fff;
+  padding: 1rem;
+  border-radius: .75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex: 1;
+  max-height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.items-heading {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Individual item */
+.prescription-item {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: .75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: .5rem;
+  margin-bottom: .75rem;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.prescription-item:hover {
+  border-color: #2563eb;
+  background: #f0f8ff;
+}
+.remove-btn {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.prescription-item h4 {
+  margin: 0 0 .25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.prescription-item .dose,
+.prescription-item .note {
+  margin: 0;
+  font-size: .875rem;
+  color: #4a5568;
+}
+.prescription-item .meta {
+  margin-top: .5rem;
+  font-size: .75rem;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+/* Confirm button */
+.btn-confirm {
+  width: 100%;
+  max-width: 400px;
+  padding: .75rem;
+  background: #facc15;
+  color: #1a202c;
+  border: none;
+  border-radius: .5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+  align-self: center;
+}
+.btn-confirm:hover {
+  background: #eab308;
+}
+/* ===== Dropdown “Tên học sinh” đẹp hơn ===== */
+.field > select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #d1d5db;       /* gray-300 */
+  border-radius: 0.5rem;           /* bo góc */
+  background-color: #fff;
+  appearance: none;                /* tắt mũi tên mặc định */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2210%22%20height%3D%226%22%20viewBox%3D%220%200%2010%206%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%206%205-6z%22%20fill%3D%22%236b7280%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.field > select:focus {
+  outline: none;
+  border-color: #3b82f6;           /* blue-500 */
+}
+.status-alert {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.status-alert.success {
+  background-color: #e6ffed;
+  color: #2d662d;
+  border: 1px solid #a3e4a3;
+}
+.status-alert.error {
+  background-color: #ffe6e6;
+  color: #992d2d;
+  border: 1px solid #e4a3a3;
+}
+
+/* Nếu bạn dùng class riêng, ví dụ .select-field select, thì thay selector cho phù hợp */
